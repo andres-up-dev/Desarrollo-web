@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SustainCart - Secure Checkout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h2>Secure Checkout</h2>
+        </div>
+        <div class="cart-summary">
+            <div class="item-row">
+                <span class="item-title">SDG Eco-friendly Water Bottle</span>
+                <span class="item-price">$24.99</span>
+            </div>
+            <div class="item-row" style="font-size: 0.8rem; color: #868e96;">
+                <span>Subtotal:</span>
+                <span>$24.99</span>
+            </div>
+        </div>
+        <form action="#" method="POST" id="checkout-form">
+            <div class="optional-add-on">
+                <input type="checkbox" name="vip_warranty" id="vip_warranty" style="margin-top: 4px; margin-right: 10px;">
+                <div class="add-on-text">
+                    <label for="vip_warranty" class="add-on-label">Add shipment protection</label>
+                    Protects your shipment from loss or damage. One-time fee of <strong>$4.99</strong>. (Optional)
+                </div>
+            </div>
+            <div class="shipping-selector">
+                <span class="shipping-label">Choose Delivery Speed:</span>
+                <div class="shipping-options">
+                    <label class="shipping-box">
+                        <div>
+                            <input type="radio" name="shipping_speed" value="express" style="margin-right: 8px;">
+                            <strong>Express Shipping</strong>
+                        </div>
+                        <span style="font-weight: bold; color: #2f9e44;">$14.99</span>
+                    </label>
+                    <label class="shipping-box">
+                        <div>
+                            <input type="radio" name="shipping_speed" value="standard" checked style="margin-right: 8px;">
+                            <span>Standard Shipping</span>
+                        </div>
+                        <span>$2.99</span>
+                    </label>
+                </div>
+            </div>
+            <div class="tree-donation">
+                <input type="checkbox" name="tree_donation" id="tree_donation">
+                <label for="tree_donation">
+                    Add a $1.00 donation to plant a tree. (Optional)
+                </label>
+            </div>
+            <div class="newsletter-optin">
+                <input type="checkbox" name="newsletter" id="newsletter">
+                <label for="newsletter">
+                    Yes, please email me occasional product updates. (Optional, unsubscribe anytime.)
+                </label>
+            </div>
+            <div class="order-summary">
+                <span class="shipping-label">Order Summary:</span>
+                <div class="item-row">
+                    <span>Subtotal</span>
+                    <span id="s-subtotal">$24.99</span>
+                </div>
+                <div class="item-row" id="r-shipping">
+                    <span>Shipping</span>
+                    <span id="s-shipping">$2.99</span>
+                </div>
+                <div class="item-row" id="r-protection">
+                    <span>Shipment protection</span>
+                    <span id="s-protection">$0.00</span>
+                </div>
+                <div class="item-row" id="r-tree">
+                    <span>Tree donation</span>
+                    <span id="s-tree">$0.00</span>
+                </div>
+                <div class="item-row" style="font-weight: bold;">
+                    <span>Total</span>
+                    <span id="s-total">$27.98</span>
+                </div>
+            </div>
+
+            <div class="checkout-actions">
+                <button type="submit" class="btn-checkout">
+                    Confirm Order & Pay <span id="btn-total">$27.98</span>
+                </button>
+            </div>
+
+        </form>
+    </div>
+    <script>
+        const baseProductPrice = 24.99;
+        const shippingPrices = { express: 14.99, standard: 2.99 };
+
+        function getTotal() {
+            const delivery = document.querySelector('input[name="shipping_speed"]:checked');
+            const shipping = delivery ? shippingPrices[delivery.value] : 0;
+            const protection = document.getElementById('vip_warranty').checked ? 4.99 : 0;
+            const tree = document.getElementById('tree_donation').checked ? 1.00 : 0;
+
+            document.getElementById('s-subtotal').textContent = '$' + baseProductPrice.toFixed(2);
+            document.getElementById('s-shipping').textContent = '$' + shipping.toFixed(2);
+            document.getElementById('s-protection').textContent = '$' + protection.toFixed(2);
+            document.getElementById('s-tree').textContent = '$' + tree.toFixed(2);
+
+            document.getElementById('r-protection').style.display = protection ? 'flex' : 'none';
+            document.getElementById('r-tree').style.display = tree ? 'flex' : 'none';
+
+            const total = baseProductPrice + shipping + protection + tree;
+            document.getElementById('s-total').textContent = '$' + total.toFixed(2);
+            document.getElementById('btn-total').textContent = '$' + total.toFixed(2);
+            return total;
+        }
+
+        document.getElementById('checkout-form').addEventListener('input', () => getTotal());
+        document.getElementById('checkout-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const total = getTotal();
+            alert('Your order total is $' + total.toFixed(2) + '. Thank you for shopping with SustainCart!');
+        });
+        getTotal();
+    </script>
+</body>
+</html>

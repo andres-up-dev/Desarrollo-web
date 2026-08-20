@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: black;
+}
+
+.row {
+    display: flex;
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    border: 5px solid black;
+    box-sizing: border-box;
+    margin: -1px;
+}
+
+.red {
+    background: red;
+}
+
+.blue {
+    background: blue;
+}
+
+.yellow {
+    background: yellow;
+}
+
+.white {
+    background: white;
+}
+
+.black {
+    background: black;
+}
+
+.big {
+    width: 300px;
+}
+
+.tall {
+    height: 300px;
+}

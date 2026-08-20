@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SustainHub - SDG Sprints</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- NAVIGATION SKELETON -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">SustainHub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sdgNav"
+                aria-controls="sdgNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="sdgNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">SDG Targets</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Action Hub</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN LAYOUT GRID -->
+    <div class="container my-5">
+
+        <!-- CHALLENGE PART A: HERO CONTENT & CAROUSEL -->
+        <!-- Instructions: Create a responsive row. On large screens, the text description 
+             should take up 5 columns, and a slide Carousel should take up 7 columns. 
+             On mobile screens, they should stack vertically (12 columns each). -->
+        <div class="row align-items-center g-4">
+
+            <div class="col-12 col-lg-5">
+                <!-- HERO TEXT COLUMN (Needs responsive col declarations) -->
+                <h1>Support SDG Goal 13: Climate Action</h1>
+                <p class="lead">Our planet is facing unprecedented environmental challenges. Join the SustainHub community sprint to develop software integrations that track local emissions, organize dynamic community-led restoration events, and shut down dark patterns in greenwashed marketing pipelines.</p>
+
+                <!-- Action Buttons: Enforce contrast rules and semantic colors -->
+                <!-- Task: Add a primary action button and a secondary outline button -->
+                <div class="my-3">
+                    <!-- ADD BUTTONS HERE -->
+                    <button type="button" class="btn btn-primary btn-lg me-2">Join the Sprint</button>
+                    <button type="button" class="btn btn-outline-secondary btn-lg">Download Toolkit</button>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-7">
+                <!-- CAROUSEL COMPONENT COLUMN (Needs responsive col declarations) -->
+                <!-- Task: Insert a Bootstrap Carousel component inside this column slot.
+                     Configure 3 slides with custom climate target labels. -->
+                <div id="sdgCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#sdgCarousel" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#sdgCarousel" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#sdgCarousel" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner rounded-3">
+                        <div class="carousel-item active bg-dark text-white p-5 text-center">
+                            <h2>1.5°C</h2>
+                            <p class="mb-0">Keep global warming below 1.5°C using measurable reduction of CO2 targets.</p>
+                        </div>
+                        <div class="carousel-item bg-success text-white p-5 text-center">
+                            <h2>100% Renewable</h2>
+                            <p class="mb-0">Transition community power to 100% renewable energy by 2035.</p>
+                        </div>
+                        <div class="carousel-item bg-primary text-white p-5 text-center">
+                            <h2>12M Trees</h2>
+                            <p class="mb-0">Restore 12 million trees across state lines by 2030.</p>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#sdgCarousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#sdgCarousel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CHALLENGE PART B: ACTION CARDS SECTION -->
+        <!-- Instructions: Create a grid below containing three action cards. 
+             - On desktop (lg): Display as 3 equal columns (4 columns each in the 12-col system).
+             - On tablet (md): Display as a 2-column layout (First two cards side-by-side, third card wrapping below).
+             - On mobile (xs/sm): Display stacked vertically (12 columns each). -->
+        <h2 class="my-5 text-center">Community Solutions</h2>
+        <div class="row g-4">
+
+            <!-- Card 1 Slot -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Forest Restoration</h5>
+                        <p class="card-text">Organize tree planting drives and analyze canopy coverage metrics dynamically using public satellite datasets.</p>
+                        <!-- Button goes here -->
+                        <button type="button" class="btn btn-outline-success mt-auto align-self-start">Organize a Drive</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 Slot -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Energy Trackers</h5>
+                        <p class="card-text">Develop software dashboards for businesses to log real-time energy expenditures and locate carbon bottlenecks.</p>
+                        <!-- Button goes here -->
+                        <button type="button" class="btn btn-outline-warning mt-auto align-self-start">Open a Dashboard</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 Slot -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Ocean Cleanups</h5>
+                        <p class="card-text">Map localized plastic deposition vectors and coordinate volunteer cleanup deployments on regional shorelines.</p>
+                        <!-- Button goes here -->
+                        <button type="button" class="btn btn-outline-info mt-auto align-self-start">Map a Cleanup</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <h2 class="my-5 text-center">Component Demos</h2>
+        <div class="row g-4">
+
+            <div class="col-12 col-md-6 col-lg-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Pagination</h5>
+                        <p class="card-text">Browse the community action log page by page.</p>
+                        <nav aria-label="Community action pages">
+                            <ul class="pagination mb-0">
+                                <li class="page-item disabled"><a class="page-link" href="#">Prev</a></li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <!-- toast -->
+            <div class="col-12 col-md-6 col-lg-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Toast Notifications</h5>
+                        <p class="card-text">A non-blocking confirmation appears in the bottom-right corner.</p>
+                        <button type="button" class="btn btn-success" onclick="showToast()">Show Toast</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Toast container + live toast -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">SustainHub</strong>
+                <small>just now</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">Report saved. Keep up the good work!</div>
+        </div>
+    </div>
+
+    <!-- Demo 3: Sticky footer pinned to the bottom of the viewport -->
+    <footer class="mt-auto py-3 bg-dark text-white">
+        <div class="container text-center">
+            <span>SustainHub · SDG Sprints · Goal 13: Climate Action</span>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showToast() {
+            new bootstrap.Toast(document.getElementById('liveToast')).show();
+        }
+    </script>
+</body>
+</html>
