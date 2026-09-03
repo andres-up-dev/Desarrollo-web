@@ -1,3 +1,90 @@
 body {
-  margin: 0;
+  background-color: aliceblue;
+  font-family: 'Merriweather', serif;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Sacramento', cursive;
+  color: darkblue;
+  font-size: 5.5rem;
+  margin: 50px;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  color: steelblue;
+  padding-bottom: 10px;
+}
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: cornflowerblue;
+}
+
+hr {
+  border-style: dotted none none none;
+  border-color: #EAF6F6;
+  border-width: 6px;
+  width: 4%;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: green;
+}
+
+.logo {
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 50%;
+}
+
+.even {
+  background-color: lightsteelblue;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.member {
+  display: inline-block;
+  width: 200px;
+  background-color: white;
+  margin: 10px;
+  padding: 10px;
+}
+
+.member img {
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 50%;
+}
+
+.mountain {
+  position: static;
+}
+
+.cloud1, .cloud2 {
+  position: sticky;
+  top: 0;
+}
+
+form {
+  border: 3px dotted steelblue;
+  background-color: white;
+}
+
+input, select, textarea {
+  border-radius: 10px;
+  background-color: aliceblue;
 }

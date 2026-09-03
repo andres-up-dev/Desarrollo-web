@@ -79,3 +79,4 @@ calculateBtn.addEventListener('click', () => {
     resultStatus.textContent = result;
     return 0;
 });
+
