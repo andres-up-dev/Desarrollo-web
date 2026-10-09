@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>SustainHub API Tester</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>SustainHub API Client</h1>
+  <p id="auth-status">Status: Anonymous (No Token)</p>
+
+  <!-- Controls Panel -->
+  <h3>1. Login</h3>
+  <button id="login-user-btn">Login as User</button>
+  <button id="login-admin-btn">Login as Admin</button>
+  <button id="clear-token-btn">Clear Token</button>
+
+  <h3>2. Test endpoints</h3>
+  <button id="get-all-btn">GET /api/initiatives</button>
+  <button id="get-one-btn">GET /api/initiatives/1</button>
+  <button id="delete-admin-btn">DELETE /api/initiatives/1</button>
+  <button id="trigger-404-btn">GET /api/unknown-route</button>
+
+  <h3>3. Create initiative</h3>
+  <input type="text" id="init-title" placeholder="Title">
+  <select id="init-priority">
+    <option value="High">High</option>
+    <option value="Medium">Medium</option>
+  </select>
+  <button id="post-init-btn">POST /api/initiatives</button>
+
+  <!-- Terminal Output Window -->
+  <h3>Output:</h3>
+  <pre id="output">Click a button...</pre>
+
+  <script src="js/client.js"></script>
+</body>
+</html>
