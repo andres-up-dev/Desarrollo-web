@@ -1,0 +1,14 @@
+{
+  "name": "07-basicnode",
+  "version": "1.0.0",
+  "description": "Basic Node exercises",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "star-wars-quotes": "^1.0.2",
+    "superheroes": "3.0.0",
+    "supervillains": "3.1.0"
+  }
+}

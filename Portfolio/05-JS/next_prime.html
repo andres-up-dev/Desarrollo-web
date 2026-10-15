@@ -19,6 +19,10 @@
                 for (var i = number + 1; i < maxNum; i++) {
                     //TODO: check if the current number is a prime or not
                     // If it is, then return it
+                    if (isPrime(i)) {
+                        document.getElementById("nextPrimeLbl").innerHTML = i;
+                        return i;
+                    }
                     continue;
                 }
             } else {
@@ -27,6 +31,9 @@
             }
         }
         function isPrime(num) {
+            if (num < 2) {
+                return false;
+            }
             for (var i = 2; i < num; i++) {
                 if (num % i === 0) {
                     return false;
@@ -43,6 +50,8 @@
             <input type="text" id="num" />
             <button id="btn" onclick="checkPrime();return false">
                 Click To Get Next Prime Number</button>
+            <br />
+            <span id="nextPrimeLbl"></span>
         </div>
     </form>
 </body>

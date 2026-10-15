@@ -19,7 +19,29 @@
                 <input type="text" name="name" id="name" placeholder="Name">
                 <input type="submit" value="go next">
             </form>
-
+            <% if (locals.names) { %>
+                <% for (let i = 0; i < names.length; i++) { %>
+                    <p>Hello <a href="/greet?id=<%= i %>">
+                            <%= names[i] %>
+                        </a></p>
+                    <% } %>
+                        <% } %>
+                            <h2>TODO List</h2>
+                            <form action="/task" method="post">
+                                Task:
+                                <input type="text" name="task" id="task" placeholder="Task">
+                                <input type="submit" value="add">
+                            </form>
+                            <% if (locals.tasks) { %>
+                                <% for (let i = 0; i < tasks.length; i++) { %>
+                                    <p>
+                                        <%= tasks[i] %>
+                                            <a href="/task/delete?id=<%= i %>">delete</a>
+                                            <a href="/task/up?id=<%= i %>">up</a>
+                                            <a href="/task/down?id=<%= i %>">down</a>
+                                    </p>
+                                    <% } %>
+                                        <% } %>
 </body>
 
 </html>
